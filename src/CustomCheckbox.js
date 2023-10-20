@@ -8,7 +8,7 @@ function CustomCheckbox() {
   };
 
   return (
-    <label className="flex items-center space-x-2">
+    <label className="flex items-center space-x-2 mt-3">
       <input
         type="checkbox"
         className="form-checkbox rounded-full h-4 w-4 text-indigo-600 border-indigo-600 focus:ring-indigo-500"

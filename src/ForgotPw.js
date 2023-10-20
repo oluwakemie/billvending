@@ -3,7 +3,7 @@ import React from "react";
 const ForgotPw = () => {
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between px-3">
         <img src="Logo.png" className="w-[120px] " />
         <button className="font-bold border-2 bg-[#124072] text-[10px] w-[100px] rounded-full p-2 text-white ">
           Sign In
