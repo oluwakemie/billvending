@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({isOpen}) => {
   const location = useLocation();
   const [wallet, setWallet] = useState(false);
+  
 
-  return (
-    <div className="w-[200px] h-screenbg-gray-100 text-white sticky left-0">
+  return (<>
+  {isOpen && (
+    <div className={`w-[200px] h-screenbg-gray-100 text-white sticky ${isOpen? "block" : "hidden"}  md:block left-0 `}>
       <img src="/logo.png" alt="" className="w-[150px] p-3" />
       <div className="text-white flex flex-col gap-6 p-3">
         <Link to="/">
@@ -127,7 +129,7 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
-  );
+    )}</>);
 };
 
 export default Sidebar;

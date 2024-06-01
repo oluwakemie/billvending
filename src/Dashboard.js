@@ -5,7 +5,8 @@ const Dashboard = () => {
     <>
       <div className=" mt-10 px-[40px] gap-[40px] lg:gap-[8%] flex flex-wrap justify-between">
         <div className="flex flex-col mt-10  w-full lg:w-[62%]">
-          <div className="flex gap-6 drop-shadow-xl flex-wrap  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-shadow-xl flex-wrap  ">
+
             <div className="px-5 bg-white border-gray-100  rounded-lg  min-w-[200px] ">
               <div className="flex items-center justify-between gap-7 mb-7">
                 <p className="text-[13px]">Active Billers</p>
@@ -16,6 +17,7 @@ const Dashboard = () => {
                 Billers
               </p>
             </div>
+            
             <div className="bg-white px-7 border-none rounded-lg border-gray-100 min-w-[200px]">
               <p className="text-[13px] mb-9">Active Billers</p>
               <p className="font-bold text-[25px] px-1 ">350/500</p>
@@ -120,8 +122,11 @@ const Dashboard = () => {
                 <img src="right.svg" alt="r" />
               </div>
             </div>
-            
-            <table class="table-fixed" className="min-w-full  divide-y divide-gray-200">
+
+            <table
+              class="table-fixed"
+              className="min-w-full  divide-y divide-gray-200"
+            >
               <tbody>
                 <tr className="">
                   <tr>
@@ -147,19 +152,21 @@ const Dashboard = () => {
                   <td className="text-[12px] text-gray-400">Electricty</td>
                   <td className="text-[12px] font-bold">95% / 5%</td>
                   <button className="text-[11px] border-none bg-red-200 text-red-600 px-2 py-1 rounded-md">
-                  Inactive</button>
+                    Inactive
+                  </button>
                 </tr>
                 <tr>
                   <tr>
-                  <img src="Frame7.svg" alt="" />
-                  <td className="text-[12px] font-bold">
-                  Eko Electricity Disco</td>
+                    <img src="Frame7.svg" alt="" />
+                    <td className="text-[12px] font-bold">
+                      Eko Electricity Disco
+                    </td>
                   </tr>
                   <td className="text-[12px] text-gray-400">CableTv</td>
                   <td className="text-[12px] font-bold">95% / 1.5%</td>
                   <button className="text-[12px] border-none bg-green-200 text-green-600 px-2 py-1 rounded-md">
-                  Active
-                </button>
+                    Active
+                  </button>
                 </tr>
               </tbody>
             </table>

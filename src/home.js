@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./global/sidebar";
 
 import Topbar from "./global/topbar";
@@ -6,11 +6,13 @@ import { Outlet } from "react-router-dom";
 
 
 const Home = () => {
+  const [isOpen,  setIsOpen]=useState(false)
+
   return (
     <div className="flex gap-5">
-      <Sidebar />
+      <Sidebar isOpen={isOpen}/>
       <div className="w-full ">
-        <Topbar />
+        <Topbar  isOpen={isOpen} setIsOpen={setIsOpen}/>
         <Outlet />
       </div>
     </div>
