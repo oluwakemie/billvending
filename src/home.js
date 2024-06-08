@@ -9,7 +9,7 @@ const Home = () => {
   const [isOpen,  setIsOpen]=useState(false)
 
   return (
-    <div className="flex gap-5">
+    <div className="flex ">
       <Sidebar isOpen={isOpen}/>
       <div className="w-full ">
         <Topbar  isOpen={isOpen} setIsOpen={setIsOpen}/>

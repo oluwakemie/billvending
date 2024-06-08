@@ -13,6 +13,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [Loading, setLoading] = useState("")
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -62,12 +63,14 @@ const Signin = () => {
   //     });
   // };
 
-  async function login() {
+  async function login(e) {
+    e.preventDefault();
     try {
       const response = await api.signIn({ email, password });
-      setUserData(response)
+      setUserData(response);
+      navigate("/");
       console.log("res of login==>>>>>", response);
-      enqueueSnackbar(response.message, { variant: 'success' })
+      enqueueSnackbar(response.message, { variant: "success" });
     } catch (e) {
       console.log(e);
     }
@@ -85,12 +88,15 @@ const Signin = () => {
             Enter registered E-mail and Password <br /> details{" "}
           </p>
 
-          <form onSubmit={login} className=" flex flex-col max-w-[427px] w-[327px] md:w-[427px] self-center gap-4">
+          <form
+            onSubmit={login}
+            className=" flex flex-col max-w-[427px] w-[327px] md:w-[427px] self-center gap-4"
+          >
             <input
               value={email}
               type="email"
               placeholder="kemi@gmail.com"
-              className="h-10 px-4 py-2 placeholder:text-[#A0AEC0] placeholder:font-normal font-medium text-[#124072] text-[16px] leading-[24px] tracking-[0.2px] bg-white border border-[#E2E8F0] rounded-md focus:outline-none focus:ring-[#124072] focus:border-[#124072] sm:text-sm w-full"
+              className=" h-10 px-4 py-2 placeholder:text-[#A0AEC0] placeholder:font-normal font-medium text-[#124072] text-[16px] leading-[24px] tracking-[0.2px] bg-white border border-[#E2E8F0]  rounded-md focus:outline-none focus:ring-[#124072] focus:border-[#124072] sm:text-sm w-full"
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className="relative mt-3">
@@ -102,7 +108,8 @@ const Signin = () => {
                 name="password"
                 className="h-10 px-4 py-2 placeholder:text-[#A0AEC0] placeholder:font-normal font-medium text-[#124072] text-[16px] leading-[24px] tracking-[0.2px] bg-white border border-[#E2E8F0]  rounded-md focus:outline-none focus:ring-[#124072] focus:border-[#124072] sm:text-sm w-full "
                 onChange={(e) => setPassword(e.target.value)}
-              />{" "}
+              />
+
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
@@ -115,22 +122,24 @@ const Signin = () => {
               </button>
             </div>
             <div className="">
-              <CustomCheckbox /> <h1 className="text-[12px] font-bold text-[#124072]">
-            Forgot Password?
-          </h1>
+              <CustomCheckbox />
+              <a href="/ForgotPw">
+                <h1 className="text-lg font-bold text-[#124072]">
+                  Forgot Password?
+                </h1>
+              </a>
             </div>
             <div className="w-full flex justify-center">
               {" "}
               <button
                 // onClick={handleLogin}
                 type="submit"
-                className="font-bold border-1 bg-[#124072] text-[10px]  rounded-[10px] p-3 text-white justify-center mx-auto w-full  "
+                className="font-bold border-1 bg-[#124072] text-lg  rounded-[10px] p-3 text-white justify-center mx-auto w-full  "
               >
                 Sign In
               </button>
             </div>
           </form>
-         
         </div>{" "}
       </div>
       <div className=" w-full flex justify-between absolute bottom-0 left-0 right-0 px-[48px] pb-2 ">
