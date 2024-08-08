@@ -40,7 +40,7 @@ const Clients = () => {
           <thead class="border-b font-medium dark:border-neutral-500">
             <tr>
               <tr>
-                <th scope="col" class="px-6 py-4 ">
+                <th scope="col" class="px-6 py-4">
                   <tr className="flex gap-1">
                     <p>Name/Clients</p>
                     <img src="Group1.svg" alt="" />

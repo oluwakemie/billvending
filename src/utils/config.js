@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://billvendingclientapi.paylodeservices.com/api/v2/auth';
+export const API_BASE_URL = 'https://billvendingclientapi.paylodeservices.com/api/v2';
 export const getApiUrl = (endpoint) => API_BASE_URL + endpoint
 
 export const ALLCLIENTS = getApiUrl('/clients/profile');
